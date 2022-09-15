@@ -3,10 +3,12 @@ import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
+import {HelmetProvider} from "react-helmet-async";
 
 function App() {
   return (
     <div>
+      <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route path = "/" element = {<Home />}/>
@@ -14,6 +16,7 @@ function App() {
           <Route path = "/products" element = {<Products />} />
         </Routes>
       </BrowserRouter>
+      </HelmetProvider>
     </div>
   );
 }
